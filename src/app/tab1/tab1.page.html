@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 1
+      Juegos
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,9 +9,54 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
+      <ion-title size="large">Juegos</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>Juegos de la tierra fantástica de Oz</ion-card-subtitle>
+      <ion-card-title>Cacho Raro</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      
+      
+      
+      <ion-item>
+        <ion-label>Dado 1</ion-label>
+        <ion-input [(ngModel)]="dado1" type="number" value="0"></ion-input>
+      </ion-item>
+      
+      <ion-item>
+        <ion-label>Dado 2</ion-label>
+        <ion-input [(ngModel)]="dado2" type="number" value="0"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Dado 3</ion-label>
+        <ion-input [(ngModel)]="dado3" type="number" value="0"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Dado 4</ion-label>
+        <ion-input [(ngModel)]="dado4" type="number" value="0"></ion-input>
+      </ion-item>
+
+      <ion-button color="primary" (click)="mostrarGanador()" expand="block" fill="outline">Jugar</ion-button>
+
+      <div *ngIf="resultado=='ganador'" class="ganar">
+        Ganaste
+      </div>
+      
+      <div *ngIf="resultado=='perdedor'" class="perder">
+        Perdiste
+      </div>
+     
+      
+    </ion-card-content>
+  </ion-card>
+  
+  
+
 </ion-content>
